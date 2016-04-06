@@ -129,12 +129,9 @@ VulcanizeCompiler.prototype.processFilesForTarget = function (files) {
     }
 
     // Add imports if defined.
-    if (process.env.VULCANIZE && _.isArray(json.imports)) {
+    if (_.isArray(json.imports)) {
       log("Importing vulcanized file...");
       vulcanizeImports(file, json.imports);
-    } else {
-      log("Importing individual files...");
-      individualImports(file, json.imports);
     }
   });
 };
